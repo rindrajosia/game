@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript computer vs player.</title>
+</head>
+<body>
+
+    <script>
+        function computerPlay() {
+            let items = ["ROCK", "PAPER", "SCISSORS"];
+            return items[Math.floor(Math.random()*items.length)];
+        }
+        function playRound(playerSelection, computerSelection) {
+            let p = playerSelection.toUpperCase();
+            let o = computerSelection.toUpperCase();
+            if((p === "ROCK") && (o === "PAPER")){
+               return("player choice: "+ p + "Computer choice :"+ o +" Computer win") ;
+            }
+            if((p === "ROCK") && (o === "SCISSORS")){
+               return("player choice: "+ p + " Computer choice :"+ o +" Player win") ;
+            }
+
+            if((p === "SCISSORS") && (o === "ROCK")){
+               return("player choice: "+ p + " Computer choice :"+ o +" Computer win") ;
+            }
+            if((p === "SCISSORS") && (o === "PAPER")){
+               return("player choice: "+ p + "Computer choice :"+ o +" Player win") ;
+            }
+
+            if((p === "PAPER") && (o === "ROCK")){
+               return("player choice: "+ p + " Computer choice :"+ o +" Player win") ;
+            }
+            if((p === "PAPER") && (o === "SCISSORS")){
+               return("player choice: "+ p + " Computer choice :"+ o +" Computer win") ;
+            }
+
+            if(p === o){
+               return("player choice: "+ p + " Computer choice :"+ o +" equal") ;
+            }
+            
+ 
+        }
+        
+        function game() {
+            for (i = 0; i < 5; i++) {
+                let user = prompt("your choice?");
+                let computerSelection = computerPlay();
+                console.log(playRound(user, computerSelection));
+            }
+            
+        }
+        
+        game();
+    </script>
+</body>
+</html>
